@@ -1,0 +1,22 @@
+/* Fonts CSS */
+
+/* Подключение HSESans-Bold */
+@font-face {
+  font-family: "HSESans";
+  src: url("../fonts/HSESans-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Подключение HSESans-Regular */
+@font-face {
+  font-family: "HSESans";
+  src: url("../fonts/HSESans-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Применение шрифта к элементам */
+body {
+  font-family: "HSESans", sans-serif;
+}

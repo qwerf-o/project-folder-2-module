@@ -1,0 +1,6 @@
+/* style.css */
+@import url("reset.css"); /* Reset styles */
+@import url("fonts.css"); /* Font styles */
+@import url("layout.css"); /* Desktop layout styles */
+@import url("adaptive.css"); /* Adaptive styles */
+@import url("animation.css"); /* Animation styles */
