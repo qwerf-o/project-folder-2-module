@@ -1,64 +1,24 @@
-/* Анимация движения вперед */
-@keyframes move-forward {
+.Text.Dreamcore {
+  /* /анимация перекрашивания слова */
+
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 100%;
+  animation: 4s infinite linear;
+  /* /название, время действия, бесконечно меняет цвет, сплавно меняется/  */
+}
+@keyframes text-color-animation {
   0% {
-    transform: translateX(0);
+    color: #7a8cc3; /* Голубой */
+  }
+  33% {
+    color: #f4c2c2; /* Нежно-розовый */
+  }
+  66% {
+    color: #fbc9a1; /* персиковый */
   }
   100% {
-    transform: translateX(200px);
-  } /* Задайте расстояние движения */
-}
-
-/* Animation Container */
-.animation-container {
-  width: 227px; /* Ширина кадра */
-  height: 390px; /* Высота кадра */
-  overflow: hidden;
-  position: relative;
-  border: none; /* Убрана рамка */
-  animation: move-forward 2s linear infinite; /* Анимация движения вперед */
-}
-
-/* Hide All Frames Initially */
-.animated-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: auto;
-  transition: opacity 0.1s ease-in-out;
-  border: none; /* Убираем рамку у изображений */
-}
-
-/* Animating Frames */
-@keyframes animated-frame {
-  0% {
-    opacity: 1;
+    color: #7a8cc3; /* Возврат к голубому */
   }
-  16.67% {
-    opacity: 0;
-  }
-  33.34% {
-    opacity: 1;
-  }
-}
-
-/* Frame Visibility */
-#frame1 {
-  animation: animated-frame 1s 0s infinite;
-}
-#frame2 {
-  animation: animated-frame 1s 0.16s infinite;
-}
-#frame3 {
-  animation: animated-frame 1s 0.32s infinite;
-}
-#frame4 {
-  animation: animated-frame 1s 0.48s infinite;
-}
-#frame5 {
-  animation: animated-frame 1s 0.64s infinite;
-}
-#frame6 {
-  animation: animated-frame 1s 0.8s infinite;
 }

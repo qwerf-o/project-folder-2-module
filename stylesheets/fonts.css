@@ -15,7 +15,18 @@
   font-weight: normal;
   font-style: normal;
 }
+/* Подключение Monologue Rounded DEMO */
+@font-face {
+  font-family: "MonologueRoundedDemo";
+  src: url("../fonts/MonologueRoundedDemo.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
+/* Пример использования */
+body {
+  font-family: "MonologueRoundedDemo", sans-serif;
+}
 /* Применение шрифта к элементам */
 body {
   font-family: "HSESans", sans-serif;

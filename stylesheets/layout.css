@@ -1,8 +1,732 @@
 /* Layout CSS */
 body {
+  background-color: #7797c3;
+  font-family: "HSESans";
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section_first {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f4f4f4;
+  height: 100vh;
+}
+
+.cloud_1,
+.cloud_2,
+.cloud_3,
+.cloud_4 {
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+  /* Анимация перехода 0.5 секунды */
+}
+
+.section_first:hover .cloud_1,
+.section_first:hover .cloud_3 {
+  transform: translateX(-150%);
+  /* Перемещение влево за пределы экрана */
+}
+
+.section_first:hover .cloud_2,
+.section_first:hover .cloud_4 {
+  transform: translateX(150%);
+  /* Перемещение вправо за пределы экрана */
+}
+
+.section_first:not(:hover) .cloud_1,
+.section_first:not(:hover) .cloud_2 {
+  transform: translateX(0);
+  /* Возврат в исходное положение */
+}
+
+.section_first:not(:hover) .cloud_3,
+.section_first:not(:hover) .cloud_4 {
+  transform: translateX(0);
+  /* Возврат в исходное положение */
+}
+
+.hands_1,
+.hands_2,
+.hands_3,
+.hands_4,
+.hands_5,
+.hands_6 {
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hands_wrapper:hover .hands_wrapper-img {
+  transform: scale(1.2);
+}
+
+.hands_wrapper:not(:hover) {
+  animation: none;
+  transform: translateX(0);
+  /* Возврат в начальное положение */
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "MonologueRoundedDemo";
+  font-weight: 400;
+}
+
+.dream-core:hover {
+  color: #d63f25;
+}
+
+.h1_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Dreamcore_container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  justify-content: space-between;
+}
+
+/* Стили для заголовка DREAMCORE */
+
+.dream-core {
+  color: #000000;
+  text-align: center;
+  /* Горизонтальное выравнивание текста */
+  font-family: "MonologueRoundedDemo-Regular", sans-serif;
+  font-size: 13.1875rem;
+  font-weight: 400;
+  display: flex;
+  /* Включаем Flexbox */
+  justify-content: center;
+  /* Горизонтальное центрирование */
+  align-items: center;
+  /* Вертикальное центрирование */
+  /* Высота блока */
+  width: 100%;
+  /* Блок займет всю ширину родителя */
+  position: relative;
+}
+
+.Cloud {
+  height: 28.7981rem;
+  overflow: hidden;
+}
+
+.cloud_2 {
+  top: 0;
+  right: 0;
+}
+
+.cloud_3 {
+  bottom: 0;
+  left: 0;
+}
+
+.cloud_4 {
+  bottom: 0;
+  right: 0;
+}
+
+.cloud_1 {
+  top: 0;
+  left: 0;
+}
+
+/*Section_hands*/
+
+.hands_wrapper,
+.eyes_wrapper {
+  position: relative;
+}
+
+.hands_wrapper {
+  width: 31.75rem;
+  height: 56.125rem;
+  background-image: url(../images/background.png);
+}
+
+.hands_wrapper-img,
+.eyes_center,
+.eyes_center-elips {
+  display: block;
+  position: absolute;
+}
+
+.hands_1,
+.hands_2,
+.hands_3,
+.hands_4,
+.hands_5,
+.hands_6 {
+  z-index: 10;
+}
+
+.hands_1 {
+  top: 0;
+  left: 3.625rem;
+  right: auto;
+}
+
+.hands_2 {
+  top: 17.6875rem;
+  left: 0;
+}
+
+.hands_3 {
+  bottom: 0;
+  left: 2.375rem;
+}
+
+.hands_4 {
+  bottom: 0;
+  left: 10.8125rem;
+  right: auto;
+}
+
+.hands_5 {
+  bottom: 0;
+  right: 0;
+  left: auto;
+}
+
+.hands_6 {
+  top: 4.625rem;
+  bottom: auto;
+  left: auto;
+  right: 0;
+}
+
+.wrap_img-1,
+.wrap_img-4 {
+  animation: verticalMove 2s ease-in-out infinite;
+  /* 2 секунды, плавный переход, бесконечное повторение */
+  position: relative;
+  /* Или absolute, в зависимости от макета */
+}
+
+@keyframes verticalMove {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.eyes_center,
+.wrap_img-2,
+.wrap_img-6 {
+  animation: moveLeftRight 2s ease-in-out infinite;
+  /* 2 секунды, плавный переход, бесконечное повторение */
+  width: 8.5625rem;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-40px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.eyes_center-elips {
+  left: 14.75rem;
+  top: 17.5rem;
+  bottom: auto;
+  z-index: 3;
+}
+
+.eyes_center {
+  z-index: 4;
+}
+
+.wings_wrapper,
+.wings_wrapper-wrap {
+  position: relative;
+}
+
+.wings_wrapper {
+  margin-top: 3rem;
+  margin-left: 2.875rem;
+}
+
+.wings_wrapper-wrap_img {
+  position: absolute;
+}
+
+.wings_wrap_2 {
+  margin-top: 15.5rem;
+}
+
+.wrap_img-1 {
+}
+
+.wrap_img-2 {
+  left: 18rem;
+  top: 8rem;
+  z-index: 2;
+}
+
+.wrap_img-3 {
+  top: 7.3125rem;
+  left: 13.3125rem;
+}
+
+.wrap_img-4 {
+  top: 29rem;
+  left: 18.875rem;
+}
+
+.wrap_img-5 {
+  top: 31.5rem;
+  left: 26.8125rem;
+}
+
+.wrap_img-6 {
+  top: 34rem;
+  left: 31rem;
+}
+
+.u-d-flex {
+  display: flex;
+}
+
+.u-d-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.running_line {
+  background-color: white;
+}
+
+.scrolling {
+  will-change: transform;
+  font-size: 4.5rem;
+  animation: marquee 10s linear infinite;
+  animation-play-state: running;
+  display: inline-block;
+  margin-right: 0.625rem;
+  color: #d63f25;
+  font-size: 4.5rem;
+  background-color: white;
+}
+
+.scrolling:hover {
+  animation-play-state: paused;
+}
+
+.running_line-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.dreamcore_text {
+  display: flex;
+  flex-wrap: wrap;
+  /* Разрешает перенос на новую строку */
+  justify-content: center;
+  /* Центрирует изображения по горизонтали */
+}
+
+.dreamcore_text {
+  background-color: #d63f25;
+  padding: 0.9375rem 2.5rem;
+  /* Отступ между изображениями */
+}
+
+.img7 {
+  margin-right: 1.6875rem;
+}
+
+.img8 {
+  margin-right: 3.1875rem;
+}
+
+.block {
+  position: relative;
+  /* Для абсолютного позиционирования внутри */
+  box-sizing: border-box;
+  /* Чтобы padding учитывался в ширине */
+}
+
+.block_wrapper {
+  width: 100%;
+}
+
+.block-left {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.block-left_img {
+  height: 28.0625rem;
+}
+
+.block-left_img {
+  animation: mashrooms 4s infinite ease-in-out;
+  /* 6 секунд - это туда и обратно, infinite - бесконечное повторение */
+  transform-origin: center center;
+  /* Центр масштабирования */
+}
+
+@keyframes mashrooms {
+  0% {
+    transform: scale(1); /* Исходный размер */
+  }
+
+  50% {
+    transform: scale(1.2); /* Увеличение размера */
+  }
+  100% {
+    transform: scale(1); /* Возврат к исходному размеру */
+  }
+}
+
+.block-right {
+  background-image: url(../images/background.png);
+  width: inherit;
+}
+
+.block-left {
+  width: 25%;
+}
+
+.block-center {
+  width: 100%;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 2.8125rem;
+  column-gap: 5.1875rem;
+  background-image: url(../images/face.png);
+  padding-top: 16.4375rem;
+  padding-bottom: 11.25rem;
+  padding-left: 9.25rem;
+  padding-right: 6.75rem;
+  filter: blur(0.4rem);
+  transition: ease-in-out 0.2s;
+}
+
+.block-center:hover {
+  filter: blur(0);
+}
+
+.block-center > div {
+  width: 3.625rem;
+  height: 3.625rem;
+  border-radius: 50%;
+  /* Круглая форма */
+  background-color: red;
+  /* Начальный цвет */
+  transition: background-color 0.3s ease;
+  /* Плавный переход цвета */
+}
+
+.block-center > div:nth-child(2n) {
+  background-color: white;
+}
+
+.block-center > div:hover {
+  background-color: white;
+  /* Цвет при наведении */
+}
+
+.block-center > div:nth-child(2n):hover {
+  background-color: red;
+}
+
+/* Аналогично для .block-right */
+
+.wave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Подгонка изображения к контейнеру */
+}
+
+.text {
+  position: absolute;
+  font-size: 10rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
+  /* Или другой цвет текста */
+  opacity: 0;
+  /* Текстначально скрыт */
+}
+@media (min-width: 1200px) {
+  .dreamcore_text:hover .img1,
+  .dreamcore_text:hover .img2,
+  .dreamcore_text:hover .img3,
+  .dreamcore_text:hover .img6,
+  .dreamcore_text:hover .img7 {
+    animation: transform_scale 3s;
+    transition: all 5s;
+    /* Увеличиваем масштаб по горизонтали */
+  }
+
+  .dreamcore_text:not(:hover) .img1,
+  .dreamcore_text:not(:hover) .img2,
+  .dreamcore_text:not(:hover) .img3,
+  .dreamcore_text:not(:hover) .img6,
+  .dreamcore_text:not(:hover) .img7 {
+    animation: transform_scale-reverse 2s;
+    transition: all 5s;
+    /* Увеличиваем масштаб по горизонтали */
+  }
+
+  @keyframes transform_scale {
+    0% {
+      transform: scaleX(1);
+      /* 
+      Начальная позиция */
+    }
+
+    1% {
+      transform: translateX(0);
+    }
+
+    30% {
+      margin-left: 4rem;
+    }
+
+    99% {
+      transform: translateX(10rem);
+    }
+
+    100% {
+      transform: scaleX(1.4);
+      /* 
+       Окончательное положение */
+    }
+  }
+
+  @keyframes transform_scale-reverse {
+    0% {
+      transform: scaleX(1.4);
+      /* 
+      Начальная позиция */
+    }
+
+    1% {
+      transform: translateX(10rem);
+    }
+
+    30% {
+      margin-left: 0;
+    }
+
+    99% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Пример смещения других картинок. Нужно настроить значения left/right индивидуально */
+  .dreamcore_text:hover .img4 {
+    animation: transform_left 6s;
+  }
+
+  .dreamcore_text:hover .img5 {
+    animation: transform_left 6s;
+  }
+
+  .dreamcore_text:hover .img8 {
+    animation: transform_left 6s;
+  }
+
+  .dreamcore_text:hover .img9 {
+    animation: transform_left 6s;
+  }
+
+  .dreamcore_text:not(:hover) .img4 {
+    animation: transform_left-reverse 1s;
+  }
+
+  .dreamcore_text:not(:hover) .img5 {
+    animation: transform_left-reverse 1s;
+  }
+
+  .dreamcore_text:not(:hover) .img8 {
+    animation: transform_left-reverse 1s;
+  }
+
+  .dreamcore_text:not(:hover) .img9 {
+    animation: transform_left-reverse 1s;
+  }
+
+  @keyframes transform_left {
+    0% {
+      transform: translateX(0);
+      /* Начальная позиция */
+    }
+
+    100% {
+      transform: translateX(50rem);
+      /* Окончательное положение */
+    }
+  }
+
+  @keyframes transform_left-reverse {
+    100% {
+      transform: translateX(0);
+      /* Начальная позиция */
+    }
+
+    0% {
+      transform: translateX(50rem);
+      /* Окончательное положение */
+    }
+  }
+
+  .img4,
+  .img5,
+  .img8,
+  .img9 {
+    position: relative;
+    transition: all 2s ease-in-out;
+    /* Плавное изменение положения */
+  }
+}
+
+footer {
+  background-color: #d63f25;
+  padding-left: 2.8125rem;
+  padding-right: 1.5625rem;
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+}
+
+.footer_wrapper {
+  justify-content: space-between;
+}
+
+.logo_wrap img {
+  width: 100%;
+}
+
+.student_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.student_wrap > p {
+  line-height: 2.9375rem;
+  color: white;
+  font-size: 1.9375rem;
+}
+
+.student_wrap > p:hover {
+  color: #000000;
+}
+
+.eye_wrapper {
+  position: relative;
+}
+
+.eye_wrapper-right {
+  left: 16rem;
+  top: 36rem;
+}
+
+.eye_wrapper > img {
+  position: absolute;
+}
+
+.eye_img-1 {
+  width: 10.8125rem;
+}
+
+.eye_img-2 {
+  width: 6.875rem;
+}
+
+.eye_wrapper-1 {
+  left: 2.375rem;
+  top: 0rem;
+}
+
+.eye_wrapper-2 {
+  top: 8.625rem;
+  left: 15.875rem;
+}
+
+.eye_wrapper-3 {
+  left: 4.5rem;
+  top: 14.4375rem;
+}
+
+.eye_wrapper-4 {
+  left: 14.75rem;
+  top: 22.25rem;
+}
+
+.eye_wrapper-5 {
+  left: 2.375rem;
+  top: 31.875rem;
+}
+
+.eye_wrapper-6 {
+  left: 15.875rem;
+  top: 38.25rem;
+}
+
+.container_footer {
+  animation: footer 20s infinite;
+}
+
+.image {
+  opacity: 0;
 }
